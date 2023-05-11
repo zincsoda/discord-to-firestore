@@ -36,28 +36,15 @@ def get_days_left_to_birthday():
 
     # Convert seconds to days
     days_left = seconds_left / (60 * 60 * 24)
+    rounded_days_left = round(days_left,1)
+    print(rounded_days_left)
 
-    # Round to the nearest half day
-    half_day = 60 * 60 * 12
-    rounded_days_left = round(days_left * 2) / 2
-
-    def days_to_words(days):
-        if days == 0:
-            return "today"
-        elif days == 0.5:
-            return "tomorrow morning"
-        elif days == -0.5:
-            return "yesterday morning"
-        elif days > 0:
-            return f"in {int(days)} and a half days"
-        else:
-            return f"{int(-days)} and a half days ago"
 
     # Display the result
     # print(f"Days left until {target_date_str}: {rounded_days_left:.1f}")
-    msg = f"Zuleika's birthday is {days_to_words(rounded_days_left)}"
+    msg = f"Zuleika's birthday is in {rounded_days_left} days"
     write_to_firebase_quotes(msg)
-    print(f"Zuleika's birthday is {days_to_words(rounded_days_left)}")
+    print(msg)
 
 if __name__=="__main__":
     # write_to_firebase_quotes('testing')
