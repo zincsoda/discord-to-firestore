@@ -14,10 +14,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.channel != my_testing_channel:
+    if message.channel != my_dev_channel:
         return
 
     print('Message from {0.author}: {0.content}'.format(message))
-    await my_dev_channel.send(message.content)
+    #await my_dev_channel.send(message.content)
 
 client.run(config.house_bot_token)
