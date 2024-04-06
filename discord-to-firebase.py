@@ -33,9 +33,9 @@ async def on_message(message):
 
     if message.channel != my_testing_channel:
         return
-    os.system('clear')
+    # os.system('clear')
     message = '{0.content}'.format(message)
-    #print(message)
+    print(message)
     doc_ref.set({ 'quotes':message, })
 
 
